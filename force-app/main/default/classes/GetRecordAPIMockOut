@@ -1,0 +1,10 @@
+global with sharing class GetRecordAPIMockOut implements HttpCalloutMock {
+    global HTTPResponse respond(HTTPRequest req) {
+        HttpResponse res = new HttpResponse();
+        res.setHeader('Content-Type', 'application/json');
+        res.setBody('{Part Name=Population Sensor, Total Quantity Shipped=350000, _id=619683d69402c24f000237e9},
+ {Part Name=Drill Gauge, Total Quantity Shipped=125000, _id=619643769402c24f000229ec}');
+        res.setStatusCode(200);
+        return res;
+    }
+}
